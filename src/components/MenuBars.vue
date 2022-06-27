@@ -19,18 +19,9 @@
         v-if="displayMenu"
       >
         <ul>
-          <router-link to="/" class="link" >Accueil</router-link>
-
-          <router-link to="/about" class="link">Parcours</router-link>
-
-          <router-link to="/about" class="link">Portfolio</router-link>
-
-          <router-link to="/about" class="link">Contact</router-link>
-
-          <!-- <li>Accueil</li>
-      <li>Parcours</li>
-      <li>Portfolio</li>
-      <li>Contact</li> -->
+          <a href="#skills" class="link">Compétences</a>
+          <a href="#portfolio" class="link">Portfolio</a>
+          <a href="#contact" class="link">Contact</a>
         </ul>
       </div>
     </nav>
@@ -75,11 +66,11 @@ nav {
   //   position:fixed;
 }
 #cv {
-      position: absolute;
-    top: 0;
-    right: 0;
-    padding-right: 1em;
-      a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1em;
+  a {
     text-decoration: none;
     color: $color-dark;
     position: relative;
@@ -102,14 +93,14 @@ ul {
     color: floralwhite;
     font-size: xxx-large;
   }
-  .link{
+  .link {
     margin: 10px;
     transition: all 0.3s ease-out;
   }
   .link:hover {
-  border-top: 4px solid $color-primary;
-  border-bottom: 4px solid $color-primary;
-  padding: 6px 0; 
-}
+    border-top: 4px solid $color-primary;
+    border-bottom: 4px solid $color-primary;
+    padding: 6px 0;
+  }
 }
 </style>
