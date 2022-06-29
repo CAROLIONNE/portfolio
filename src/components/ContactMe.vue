@@ -1,38 +1,90 @@
 <template>
   <div>
     <h3>Envie de me presenter un projet ou tout simplement discuter ?</h3>
-    <form @submit.prevent="submit">
+    <form @submit.prevent="sendEmail($event)" @reset="onReset">
       <input
+        class="field"
         id="name"
-        v-model="name"
+        v-model.trim="name"
         type="text"
         name="name"
         placeholder="Nom"
       />
       <input
-        id="mail"
-        v-model="mail"
+        class="field"
+        id="email"
+        v-model.trim="email"
         type="email"
-        name="mail"
+        name="email"
         placeholder="Email"
       />
-      <input
+      <textarea
+        class="field"
         id="message"
-        v-model="message"
+        v-model.trim="message"
         type="text"
         name="message"
         placeholder="Message"
-      />
+      >
+      </textarea>
       <input type="submit" value="Envoyer" />
+      <button type="reset">Reset</button>
     </form>
   </div>
 </template>
 
 <script>
+import emailjs from "emailjs-com";
+emailjs.init('aXQKIS6B2tstkFrsM');
 export default {
   name: "ContactMe",
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: "",
+    };
+  },
+  computed: {
+    formValid() {
+      const { name, email, message } = this;
+      return (
+        name.length > 0 &&
+        /(.+)@(.+){2,}.(.+){2,}/.test(email) &&
+        message.length > 0
+      );
+    },
+  },
+
   methods: {
-    submit() {},
+    sendEmail($event) {
+       if (!this.formValid) {
+        return;
+      }
+      try {
+        emailjs.sendForm(
+          "service_kp63xtu",
+          "template_376fs8r",
+          $event.target, "aXQKIS6B2tstkFrsM",
+          {
+            name: this.name,
+            email: this.email,
+            message: this.message,
+          }
+        );
+      } catch (error) {
+        console.log({ error });
+      }
+      // Reset form field
+      this.name = "";
+      this.email = "";
+      this.message = "";
+    },
+    onReset() {
+      this.name = "";
+      this.email = "";
+      this.message = "";
+    },
   },
 };
 </script>
@@ -40,18 +92,18 @@ export default {
 <style lang="scss" scoped>
 @import "../main.scss";
 div {
-  margin-left: 3em;
+  padding-left: 4.5em;
 }
 form {
   width: 80%;
-    margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   border: 2px solid $color-dark;
   border-radius: 1em;
-  input {
+  .field {
     width: 80%;
     padding: 0.5em;
     margin: 0.5em;
