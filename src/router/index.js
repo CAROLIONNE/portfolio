@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomePortfolio from '../views/HomePortfolio.vue'
+// import HomePortfolio from '../views/HomePortfolio.vue'
 
 const routes = [
   // {
@@ -10,11 +10,11 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // },
-  {
-    path: '/',
-    name: 'HomePortfolio',
-    component: HomePortfolio
-  },
+  // {
+  //   path: '/',
+  //   name: 'HomePortfolio',
+  //   component: HomePortfolio
+  // },
 ]
 
 const router = createRouter({
