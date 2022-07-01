@@ -2,8 +2,7 @@
   <div id="bloc-menu">
     <nav>
       <svg
-        class="grey"
-        style="fill: #2c3e50"
+        style="fill: #FEC5E9"
         @click="displayMenu = !displayMenu"
         id="menu-bars"
         xmlns="http://www.w3.org/2000/svg"
@@ -28,9 +27,10 @@
   </div>
   <div id="cv">
     <!-- Lien a faire fonctionner -->
-    <a href="../assets/CV_Soc_Caroline_dev-web.pdf">
-      <p @hover="UploadCv">Caroline <strong>Soc</strong></p>
-      <p>Mon CV</p>
+    <!-- <a href="../assets/CV_Soc_Caroline_dev-web.pdf" @click="uploadCV"> -->
+    <a href="" @click="uploadCV">
+      <p id="name" @hover="showCV">Caroline <strong>Soc</strong></p>
+      <p id="cv-effect">Mon CV</p>
     </a>
   </div>
   <router-view />
@@ -56,24 +56,33 @@ export default {
 nav {
   position: fixed;
 }
-.grey {
-  color: $color-dark;
-}
 #menu-bars {
   width: 1.5em;
   display: flex;
-
-  //   position:fixed;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  &:hover {
+    transform: rotate(180deg);
+  }
 }
+
 #cv {
   position: absolute;
   top: 0;
   right: 0;
   padding-right: 1em;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  &:hover {
+    transform: translateY(-2em);
+  }
   a {
     text-decoration: none;
-    color: $color-dark;
+    color: $color-tertiary;
     position: relative;
+    strong {
+      color: lighten($color-secondary, 8%)
+    }
   }
 }
 .overlay {
@@ -87,7 +96,7 @@ nav {
 ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
   a {
     text-decoration: none;
     color: floralwhite;

@@ -35,7 +35,7 @@
 
 <script>
 import emailjs from "emailjs-com";
-emailjs.init('aXQKIS6B2tstkFrsM');
+// emailjs.init('aXQKIS6B2tstkFrsM');
 export default {
   name: "ContactMe",
   data() {
@@ -93,15 +93,19 @@ export default {
 @import "../main.scss";
 div {
   padding-left: 4.5em;
+  h3 {
+    color: $color-grey;
+  }
 }
 form {
+  padding: 0.4em;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 2px solid $color-dark;
+  border: 2px outset $color-dark;
   border-radius: 1em;
   .field {
     width: 80%;
