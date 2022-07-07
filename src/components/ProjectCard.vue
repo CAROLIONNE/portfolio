@@ -35,10 +35,11 @@ export default {
 @import "../main.scss";
 #container {
   border: 2px solid $color-dark;
-  border-radius: 1em;
+  border-radius: $br;
   background:	$color-tertiary;
   overflow: hidden;
-  padding: 0.5em
+  padding: 0.5em;
+  height: 15em;
 }
 
 </style>
