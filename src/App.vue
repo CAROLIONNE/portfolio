@@ -6,6 +6,7 @@
       <img id="portrait" src="./assets/images/me.jpg" alt="Photo de moi" />
     </div>
     <SocialNetwork />
+    <!-- <MeEffect /> -->
     <h2 id="skills">Compétences</h2>
     <div id="container-skills">
       <svg
@@ -115,6 +116,7 @@ import SocialNetwork from "@/components/SocialNetwork.vue";
 import projects from "@/assets/data_projects";
 import ProjectCard from "@/components/ProjectCard.vue";
 import ContactMe from "@/components/ContactMe.vue";
+// import MeEffect from "@/components/MeEffect.vue";
 
 export default {
   data() {
@@ -128,6 +130,7 @@ export default {
     SocialNetwork,
     ProjectCard,
     ContactMe,
+    // MeEffect
   },
 };
 </script>
@@ -137,13 +140,6 @@ h2 {
   color: $color-tertiary;
   padding: 0.2em;
 }
-// .home {
-//   display: flex;
-//   flex-wrap: wrap;
-//   border-radius: 1em;
-//   justify-content: space-around;
-//   gap: 1em 1.5em;
-// }
 #me {
   width: 100%;
   display: flex;
@@ -160,7 +156,6 @@ h2 {
 #skills {
   width: 100%;
   padding-left: 2em;
-  // margin: 0.4em;
 }
 #container-skills {
   display: flex;
@@ -191,7 +186,7 @@ h2 {
     width: 100%;
     padding-left: 2em;
     transition: all 1s;
-    // effet a tester
+    // effet horrible trouver autre chose
     &:hover {
       border-bottom: 2px solid $color-primary;
     }
