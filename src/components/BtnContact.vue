@@ -18,6 +18,7 @@ export default {
 @import "../main.scss";
 
 .btn {
+  cursor: pointer;
   margin: 1em;
   display: inline-block;
   text-align: center;

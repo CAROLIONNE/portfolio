@@ -51,7 +51,7 @@ export default {
 //   top: 19em;
   bottom: 3em;
   right: 1em;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s ease;
   &:hover{
     opacity: 1;
   }
