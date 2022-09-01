@@ -97,8 +97,8 @@
         />
       </svg>
     </div>
+    <h2 id="portfolio">Portfolio</h2>
     <div id="container-projects">
-      <h2 id="portfolio">Portfolio</h2>
       <div id="projects" v-for="project in projects" :key="project.id">
         <ProjectCard :project="project" />
       </div>
@@ -136,34 +136,54 @@ export default {
 </script>
 <style lang="scss">
 @import "main.scss";
+@keyframes title-effect {
+  0% {
+    border-bottom: 2px solid $color-secondary;
+  }
+  25% {
+    border-left: 2px solid $color-primary;
+    border-right: 2px solid $color-primary;
+  }
+  100% {
+    border-top: 2px solid $color-secondary;
+  }
+}
 h2 {
+  border: 2px solid transparent;
   color: $color-tertiary;
   padding: 0.2em;
+  border-bottom: 2px solid $color-secondary;
+  width: fit-content;
+  margin-left: 2em;
+  cursor: default;
+  
+  &:hover {
+    animation: title-effect 1000ms;
+    animation-fill-mode: forwards;
+  }
 }
 #me {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 500px;
+  height: 470px;
 }
 #portrait {
   display: flex;
   max-width: 100%;
   max-height: 100%;
   border-radius: 25%;
-  border: 2px outset $color-dark;
+  border: 2px solid $color-black;
 }
-#skills {
-  width: 100%;
-  padding-left: 2em;
-}
+
 #container-skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  // a adapter solution non responsive
-  max-height: 5em;
+  border: 1px solid transparent;
+  height: 5em;
   .skills-icon {
+    height: 3.5em;
     width: 3em;
     padding: 0.5em;
     transition: all ease-in-out 0.2s;
@@ -180,26 +200,9 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em 1.5em;
-  #portfolio {
-    // a perso cursor
-    cursor: pointer;
-    width: 100%;
-    padding-left: 2em;
-    transition: all 1s;
-    // effet horrible trouver autre chose
-    &:hover {
-      border-bottom: 2px solid $color-primary;
-    }
-  }
   #projects {
     width: 24em;
     padding: 0.5em;
-  }
-}
-#container-contact {
-  #contact {
-    width: 100%;
-    padding-left: 2em;
   }
 }
 </style>
