@@ -5,5 +5,6 @@ const projects = [
     { id: 4, developpement: "Front-end", name:"Kanap", title: "Site web responsive" , description: "Vitrine et boutique en ligne", logo: 'kanap.png', img:"" , type: "cours", techno:["JAVASCRIPT"], code:"https://github.com/CAROLIONNE/JS-kanap"},
     { id: 5, developpement: "Back-end", name:"Piiquante", title: "Application sécurisée | Base de données mongoDB" , description: "Critique de sauces piquantes",logo: 'piiquante.png', img:"" , type: "cours", techno:["NODE JS", "JAVASCRIPT", "MONGODB"], code:"https://github.com/CAROLIONNE/piiquante"},
     { id: 6, developpement: "Full-stack", name:"Groupomania", title: "Site web responsive | Base de données relationnelle | Serveur" , description: "Réseau social d'entreprise", logo: 'groupomania.png', img:"" , type: "cours", techno:["VUE JS", "NODE JS", "MYSQL", "SEQUELIZE"], code:"https://github.com/CAROLIONNE/groupomania"},
+    { id: 7, developpement: "Front-end", name:"Tasty Treat", title: "Site web responsive" , description: "Fast food avec livraison", logo:'tastytreat.png', img:"" , type: "tuto", techno:["REACT","REDUX", "BOOTSTRAP"], code:"https://github.com/CAROLIONNE/Food-delivery", demo:"https://carolionne.github.io/Food-delivery/"},
 ]
 export default projects
