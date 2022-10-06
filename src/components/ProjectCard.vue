@@ -1,6 +1,11 @@
 <template>
   <div id="card">
-    <img :src="'@/assets/logos/' + project.logo" :alt="'Logo ' + project.name" />
+    <div class="container_img">
+      <img
+        :src="require(`../assets/logos/${project.logo}`)"
+        :alt="'Logo ' + project.name"
+      />
+    </div>
     <h3 id="title">{{ project.title }}</h3>
     <p id="developpement">{{ project.developpement }}</p>
     <div id="description">{{ project.description }}</div>
@@ -39,13 +44,38 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .container_img {
+    height: 100px;
+    width: 150px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    // justify-content: center;
+  }
   img {
     display: block;
-    margin: 0px auto;
+    // width: auto;
+    // height: 40px;
+    object-fit: cover;
+    // display: flex;
+    // margin-left: auto;
+    // margin-right: auto;
+    padding: 0.5em;
+
+    max-width: 100%;
+    max-height: 100%;
+    // height: auto;
   }
   h3 {
     margin: 0;
     padding: 0;
+    font-size: 1rem;
+  }
+  #developpement {
+    font-size: 0.8rem;
+  }
+  #description {
+    font-size: 0.9rem;
   }
   #technos {
     display: flex;
@@ -87,5 +117,4 @@ export default {
     }
   }
 }
-
 </style>
