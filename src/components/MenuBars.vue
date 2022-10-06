@@ -2,7 +2,7 @@
   <div id="bloc-menu">
     <nav>
       <svg
-        style="fill: #FEC5E9"
+        style="fill: #fec5e9"
         @click="displayMenu = !displayMenu"
         id="menu-bars"
         xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,9 @@
     </nav>
   </div>
   <div id="cv">
-    <!-- Lien a faire fonctionner -->
-    <!-- <a href="../assets/CV_Soc_Caroline_dev-web.pdf" @click="uploadCV"> -->
-    <a href="" @click="uploadCV">
-      <p id="name" @hover="showCV">Caroline <strong>Soc</strong></p>
-      <p id="cv-effect">Mon CV</p>
+    <a href="./Soc_caroline.pdf" download >
+    <p id="name" @hover="showCV">Caroline <strong>Soc</strong></p>
+    <p id="cv-effect">Mon CV</p>
     </a>
   </div>
   <router-view />
@@ -48,6 +46,7 @@ export default {
     visible: Boolean,
     showMenu: Function,
   },
+  methods: {},
 };
 </script>
 
@@ -67,6 +66,7 @@ nav {
 }
 
 #cv {
+  cursor: default;
   position: absolute;
   top: 0;
   right: 0;
@@ -81,7 +81,7 @@ nav {
     color: $color-tertiary;
     position: relative;
     strong {
-      color: lighten($color-secondary, 8%)
+      color: lighten($color-secondary, 8%);
     }
   }
 }
