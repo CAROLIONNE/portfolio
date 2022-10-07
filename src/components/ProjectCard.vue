@@ -40,13 +40,12 @@ export default {
   background: $color-tertiary;
   overflow: hidden;
   padding: 0.5em;
-  height: 15em;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   .container_img {
-    height: 100%;
-    width: 150px;
+    height: 100px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
