@@ -45,7 +45,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   .container_img {
-    height: 100px;
+    height: 100%;
     width: 150px;
     display: flex;
     margin-left: auto;
