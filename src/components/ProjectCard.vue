@@ -40,30 +40,23 @@ export default {
   background: $color-tertiary;
   overflow: hidden;
   padding: 0.5em;
-  height: 100%;
+  // height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   .container_img {
-    height: 100px;
+    height: 70px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    // justify-content: center;
   }
   img {
     display: block;
-    // width: auto;
-    // height: 40px;
-    object-fit: cover;
-    // display: flex;
-    // margin-left: auto;
-    // margin-right: auto;
-    padding: 0.5em;
 
+    object-fit: cover;
+    padding: 0.5em;
     max-width: 100%;
     max-height: 100%;
-    // height: auto;
   }
   h3 {
     margin: 0;
